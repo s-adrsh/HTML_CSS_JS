@@ -1,43 +1,31 @@
-const rock = 1;
-const paper = 2;
-const scissors = 3;
+const rock = 1,
+  paper = 2,
+  scissors = 3;
 
 let userInput = 3;
 let randomNumber = Math.ceil(Math.random() * 3);
 
-if (randomNumber == userInput) {
-  console.log("Play Again " + randomNumber);
-} else {
-  if (randomNumber == paper) {
-    console.log("Hey I am Paper..");
-    if (userInput == rock) {
-      console.log("Paper wins.. / Computer Wins");
-    } else {
-      console.log("Scissor Wins / User Wins");
-    }
-  } else if (randomNumber == rock) {
-    console.log("Hey I am Rock...");
-    if (userInput == paper) {
-      console.log("Paper wins.../ User Wins");
-    } else {
-      console.log("Rock wins.../ Computer Wins");
-    }
-  } else {
-    console.log("Hey I am Scissors...");
-    if (userInput == rock) {
-      console.log("Rock wins.. / User Wins");
-    } else {
-      console.log("Scissor wins.. / Computer Wins");
-    }
-  }
-}
+randomNumber !== userInput                       // check if user and computer choose same
+  ? randomNumber == rock                         // Check if computer chose rock, paper or scissors
+    ? userInput == paper                        
+      ? console.log(`Paper Wins over Rock.. ${randomNumber} \n  User get 1 point..`)
+      : console.log(`Rock Wins over Scissors..${randomNumber} \n  Computer get 1 point..`)
+    : randomNumber == paper
+    ? userInput == rock                         
+      ? console.log(`Paper wins over Rock.. ${randomNumber} \n  Computer get 1 point..`)
+      : console.log(`Scissors wins over Paper.. ${randomNumber} \n  User get 1 point`)
+    : userInput == rock
+    ? console.log(`Rock wins over Scissors ${randomNumber} \n User get 1 point..`)
+    : console.log(`Scissors win over paper..${randomNumber} \n  Computer ger 1 point..`)
+  : console.log("Play Again " + randomNumber);
 
-// user        computer            Win
-
-// rock        paper               paper
-// scissors    paper               scissors
-// paper       rock                paper
-// scissors    rock                rock
-// rock        scissors            rock
-// paper       scissors            scissors
-
+// -----------------------------------------
+// |computer   |  user       |    Win      |
+// |-----------|-------------|-------------|
+// | rock      |  paper      |   paper     |
+// | rock      |  scissors   |   rock      |
+// | paper     |  rock       |   paper     |
+// | paper     |  scissors   |   scissors  |
+// | scissors  |  rock       |   rock      |
+// |scissors   |  paper      |   scissors  |
+// -----------------------------------------
