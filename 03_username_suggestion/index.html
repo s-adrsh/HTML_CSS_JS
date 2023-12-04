@@ -4,41 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UserName Suggestion..!</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        background-color: antiquewhite;
-      }
-      .inputs {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .inputs input {
-        padding: 10px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <form action="">
+      <form>
         <div class="inputs">
-          <input
+          <input required 
             type="email"
             name="email"
             id="email"
             placeholder="Enter your Email"
+            
           />
-          <input type="submit" value="Generate User Id" />
+          <input id="submit" type="submit" value="Generate User Id" />
         </div>
       </form>
+      <div class="suggestions"></div>
     </div>
 
     <script src="script.js"></script>

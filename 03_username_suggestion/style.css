@@ -1,0 +1,39 @@
+* {
+   box-sizing: border-box;
+   overflow: hidden;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+    font-size: 1.2rem;
+
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  
+  .inputs input {
+    padding: 10px;
+  }
+
+  .suggestions{
+    display: flex;
+    margin: 2rem;
+    gap: 1.5rem;
+  }
+
+  .names{
+    color: #b42e2e;
+  }

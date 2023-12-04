@@ -1,33 +1,37 @@
-let email = "barryallen@gmail.com";
+const submit = document.getElementById("submit");
+const suggestions = document.querySelector(".suggestions");
 
-// Taking value upto @
-let i = email.indexOf("@");
-const result = email.slice(0, i);
-console.log(result);
+submit.addEventListener("click", (e) => {
+  const email = document.querySelector("#email").value;
+  const names = document.querySelectorAll(".names");
+  e.preventDefault();
 
-const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+  // To remove previous suggestions
+  names && names.forEach((name) => name.remove());
 
-// suggestion for 4 random characters..
-let randomUserId1 = Math.floor(Math.random() * characters.length);
-let randomUserId2 = Math.floor(Math.random() * characters.length);
-let randomUserId3 = Math.floor(Math.random() * characters.length);
-let randomUserId4 = Math.floor(Math.random() * characters.length);
+  // Taking value upto @
+  let i = email.indexOf("@");
+  let result = email.slice(0, i);
 
-const suggestionTwo =
-  result +
-  characters[randomUserId1] +
-  characters[randomUserId2] +
-  characters[randomUserId3] +
-  characters[randomUserId4];
+  !email ? showSuggestion("Enter a valid Input") : userNameSuggestion();
 
-console.log(suggestionTwo);
+  //suggestion for random characters
+  function userNameSuggestion() {
+    characters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-// Suggestion for 5 random characters..
-let randomUserId5 = Math.floor(Math.random() * characters.length);
-const suggestionThree = suggestionTwo + characters[randomUserId5];
-console.log(suggestionThree);
+    for (let i = 0; i < 6; i++) {
+      result += characters[Math.floor(Math.random() * characters.length)];
 
-// Suggesion for 6 random characters...
-let randomUserId6 = Math.floor(Math.random() * characters.length);
-const suggestionFour = suggestionThree + characters[randomUserId6];
-console.log(suggestionFour);
+      i == 3 && showSuggestion(result);
+      i == 4 && showSuggestion(result);
+    }
+    showSuggestion(result);
+  }
+});
+
+function showSuggestion(username) {
+  const child = document.createElement("div");
+  child.classList.add("names");
+  child.textContent = username;
+  suggestions.appendChild(child);
+}
