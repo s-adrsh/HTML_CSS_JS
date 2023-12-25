@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login</title>
+    <style>
+      .frm {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        gap: 2rem;
+      }
+      input {
+        padding: 6px;
+      }
+      button {
+        padding: 6px 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="frm">
+        <div id="username">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Enter Username"
+          />
+        </div>
+        <div id="email"><input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter your email"
+        /></div>
+        <div id="password"><input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter Password"
+        /></div>
+        <div id="number"><input
+          type="number"
+          name="number"
+          id="number"
+          placeholder="Enter Your Number"
+        /></div>
+        <div id="gender">
+          <input type="radio" name="gender" id="male" value="male" required />
+          <label for="gender">Male</label>
+          <input type="radio" name="gender" id="female" value="female" />
+          <label for="gender">Female</label>
+          <input type="radio" name="gender" id="others" value="others" />
+          <label for="gender">Others</label>
+        </div>
+
+        <div id="select">
+          <label for="country">Country </label>
+          <select name="country" id="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
